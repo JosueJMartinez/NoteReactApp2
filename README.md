@@ -1,2 +1,2 @@
-# NoteReactApp2
+# ReactNoteApp
 Created with CodeSandbox
