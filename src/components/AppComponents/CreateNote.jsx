@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function CreateNote(props) {
+function CreateNote(props) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -58,12 +58,16 @@ export default function CreateNote(props) {
       return setAnchorEl(e.currentTarget);
     }
     if (!input.content.trim()) {
-      setError(prevVal => {
-        return { ...prevVal, content: true, message: "Missing content" };
-      });
+      setError(prevVal => ({
+        ...prevVal,
+        content: true,
+        message: "Missing content"
+      }));
       return setAnchorEl(e.currentTarget);
     }
-    props.addNote(input);
+    let date = new Date().toDateString();
+
+    props.addNote({ ...input, date });
     setInput({ title: "", content: "" });
     setHidden(true);
   };
@@ -112,3 +116,5 @@ export default function CreateNote(props) {
     </form>
   );
 }
+
+export default CreateNote;

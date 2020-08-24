@@ -6,14 +6,15 @@ import CreateNote from "./AppComponents/CreateNote";
 //testing see if uploaded
 const App = () => {
   const [notes, setNotes] = useState([]);
-  const addNote = input => {
-    setNotes(prevNotes => {
+
+  const addNote = (input) => {
+    setNotes((prevNotes) => {
       return [...prevNotes, input];
     });
   };
 
-  const deleteNote = id => {
-    setNotes(prevNotes => {
+  const deleteNote = (id) => {
+    setNotes((prevNotes) => {
       return prevNotes.filter((note, index) => {
         return id !== index;
       });
@@ -29,6 +30,7 @@ const App = () => {
           key={index}
           id={index}
           deleteNote={deleteNote}
+          date={note.date}
         />
       );
     });
