@@ -8,6 +8,7 @@ const InputTitle = props => {
       value={props.value}
       autoFocus
       className={props.errorClass}
+	
     />
   );
 };

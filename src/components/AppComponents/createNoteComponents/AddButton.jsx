@@ -5,8 +5,7 @@ import { Zoom, Fab } from "@material-ui/core";
 const AddButton = props => {
   return (
     <Zoom in={props.in}>
-      <Fab
-        onClick={e => {
+      <Fab onClick={e => {
           props.addNote(e);
           return e.preventDefault();
         }}

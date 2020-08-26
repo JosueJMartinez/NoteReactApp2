@@ -77,7 +77,10 @@ function CreateNote(props) {
   };
 
   return (
-    <form className="create-note">
+    <form className="create-note" onSubmit={e => {
+          addNote(e);
+          return e.preventDefault();
+        }}>
       {!isHidden && (
         <InputTitle
           errorClass={isError.title ? "error" : ""}
