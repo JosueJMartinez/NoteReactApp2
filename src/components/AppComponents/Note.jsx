@@ -9,7 +9,7 @@ const Note = props => {
   };
   return (
     <div className="note">
-      <Title title={props.title} /><span aria-hidden="true">&times;</span>
+      <Title title={props.title} />
       <Content content={props.content} date={props.date} />
       <DeleteButton deleteNote={deleteNote} />
     </div>
